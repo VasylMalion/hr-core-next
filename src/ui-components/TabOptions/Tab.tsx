@@ -1,17 +1,17 @@
-import { memo } from 'react'
+import { memo } from 'react';
 
 export type TabOption<T = string> = {
-  title: string
-  testId?: string
-  value: T
-}
+  title: string;
+  testId?: string;
+  value: T;
+};
 
-type TabProps<T> = TabOption<T> & {
-  isActive?: boolean
-  onChange?: (value: T) => void
-}
+type TabProps<T> = {
+  isActive?: boolean;
+  onChange?: (value: T) => void;
+} & TabOption<T>;
 
-const Tab = <T extends unknown>({
+const Tab = <T,>({
   title,
   value,
   testId,
@@ -32,6 +32,6 @@ const Tab = <T extends unknown>({
   >
     {title}
   </div>
-)
+);
 
-export default memo(Tab)
+export default memo(Tab);
