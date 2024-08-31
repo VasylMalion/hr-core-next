@@ -16,11 +16,13 @@ type ModalProps = {
 const Modal: FunctionComponent<ModalProps> = ({ isOpen, onClose, title, body, buttons }) => {
   const t = useTranslations('ui-components')
 
-  const modalRef = useRef(null)
+  const modalRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: Event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+      const target = event.target as Node | null
+      
+      if (modalRef.current && !modalRef.current.contains(target)) {
         onClose()
       }
     }
