@@ -1,0 +1,374 @@
+{
+  "login": {
+    "title": "Log in to the system",
+    "email": "Email",
+    "password": "Password",
+    "login": "Log in",
+    "errors": {
+      "EMAIL_ALREADY_EXISTS": "Such Email already used by another user",
+      "INVALID_PASSWORD": "Wrong password",
+      "INVALID_BODY": "Some data are wrong",
+      "NO_RESULT": "No result found",
+      "GENERAL_ERROR": "Something went wrong. Try again later"
+    }
+  },
+  "dashboard": {
+    "title": "Welcome to our application👋",
+    "imageAlt": "Welcome image"
+  },
+  "profile": {
+    "title": "Profile",
+    "tabs": {
+      "details": "Details",
+      "updatePassword": "Update Password"
+    },
+    "personalInfo": "Personal information",
+    "contactInfo": "Contact information",
+    "workInfo": "Work information",
+    "name": "Name:",
+    "surname": "Surname:",
+    "birthDate": "Birth date:",
+    "genderTitle": "Gender:",
+    "email": "Email:",
+    "mobile": "Phone number:",
+    "address": "Address:",
+    "department": "Department:",
+    "position": "Position:",
+    "startDate": "Start date:",
+    "gender": {
+      "MALE": "Male",
+      "FEMALE": "Female"
+    },
+    "passwordOld": "Current password",
+    "passwordNew": "New password",
+    "passwordNewAgain": "Repeat New password",
+    "update": "Update",
+    "differentPasswords": "Passwords are different",
+    "successTitle": "Success",
+    "successDescription": "The password was updated",
+    "failTitle": "Sorry",
+    "errors": {
+      "EMAIL_ALREADY_EXISTS": "Such Email already used by another user",
+      "INVALID_PASSWORD": "Wrong password",
+      "INVALID_BODY": "Some data are wrong",
+      "NO_RESULT": "No result found",
+      "GENERAL_ERROR": "Something went wrong. Try again later"
+    }
+  },
+  "employees-list": {
+    "title": "Employees",
+    "addEmployee": "Add Employee",
+    "employee": "Employee",
+    "location": "Address",
+    "position": "Position",
+    "birthDate": "Birth Date",
+    "mobileNumber": "Mobile Number",
+    "search": "Search"
+  },
+  "employee-details": {
+    "title": "Employee #{id}",
+    "deleteEmployee": "Delete employee",
+    "personalInfo": "Personal information",
+    "contactInfo": "Contact information",
+    "workInfo": "Work information",
+    "name": "Name:",
+    "surname": "Surname:",
+    "birthDate": "Birth date:",
+    "genderTitle": "Gender:",
+    "email": "Email:",
+    "mobile": "Phone number:",
+    "address": "Address:",
+    "department": "Department:",
+    "position": "Position:",
+    "startDate": "Start date:",
+    "gender": {
+      "MALE": "Male",
+      "FEMALE": "Female"
+    },
+    "deletingTitle": "Attention!",
+    "deletingDescription": "Do you really want to delete the employee?",
+    "yes": "Yes",
+    "no": "No",
+    "successTitle": "Success!",
+    "successDescription": "The employee was removed successfully",
+    "failTitle": "Sorry!",
+    "failDescription": "Something went wrong. Try again later"
+  },
+  "employee-adding": {
+    "title": "Adding a new employee",
+    "personalInfo": "Personal information",
+    "contactInfo": "Contact information",
+    "workInfo": "Work information",
+    "name": "Name",
+    "surname": "Surname",
+    "birthDate": "Birth date",
+    "genderTitle": "Gender",
+    "email": "Email",
+    "mobile": "Phone number",
+    "address": "Address",
+    "department": "Department",
+    "position": "Position",
+    "role": "Role",
+    "startDate": "Start date",
+    "add": "Add",
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "roles": {
+      "user": "User",
+      "admin": "Admin"
+    },
+    "successTitle": "Success!",
+    "failTitle": "Error!",
+    "failDescription": "Sorry, something went wrong.",
+    "successDescription": "Employee was added successfully"
+  },
+  "candidates-list": {
+    "title": "Candidates",
+    "addCandidate": "Add Candidate",
+    "search": "Search",
+    "onlyMine": "Show only my candidates",
+    "candidate": "Candidate",
+    "location": "Location",
+    "position": "Position",
+    "birthDate": "Birth Date",
+    "mobileNumber": "Mobile Number"
+  },
+  "candidate-adding": {
+    "title": "Adding a new candidate",
+    "personalInfo": "Personal information",
+    "contactInfo": "Contact information",
+    "workInfo": "Work information",
+    "name": "Name",
+    "surname": "Surname",
+    "birthDate": "Birth date",
+    "genderTitle": "Gender",
+    "email": "Email",
+    "mobile": "Phone number",
+    "location": "Location",
+    "position": "Position",
+    "salary": "Salary",
+    "create": "Create",
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "successTitle": "Success!",
+    "failTitle": "Error!",
+    "failDescription": "Sorry, something went wrong.",
+    "successDescription": "Candidate was added successfully"
+  },
+  "candidate-details": {
+    "title": "Candidate #{id}",
+    "deleteCandidate": "Delete candidate",
+    "personalInfo": "Personal information",
+    "contactInfo": "Contact information",
+    "workInfo": "Work information",
+    "name": "Name:",
+    "surname": "Surname:",
+    "birthDate": "Birth date:",
+    "genderTitle": "Gender:",
+    "email": "Email:",
+    "mobile": "Phone number:",
+    "address": "Address:",
+    "position": "Position:",
+    "salary": "Salary:",
+    "salaryValue": "{value}₴",
+    "gender": {
+      "MALE": "Male",
+      "FEMALE": "Female"
+    },
+    "deletingTitle": "Attention!",
+    "deletingDescription": "Do you really want to delete the candidate?",
+    "yes": "Yes",
+    "no": "No",
+    "successTitle": "Success!",
+    "successDescription": "The candidate was removed successfully",
+    "failTitle": "Sorry!",
+    "failDescription": "Something went wrong. Try again later"
+  },
+  "vacancies-list": {
+    "title": "Vacancies",
+    "addNewVacancy": "Add New Vacancy",
+    "search": "Search",
+    "onlyMine": "Show only my vacancies",
+    "tabs": {
+      "ALL": "All",
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    }
+  },
+  "vacancy-details": {
+    "tabs": {
+      "candidates": "Candidates",
+      "vacancyDetails": "Vacancy Details",
+      "timeline": "Timeline & Hiring team"
+    },
+    "title": "Vacancy #{id}",
+    "vacancyStatus": "Vacancy status:",
+    "deactivate": "Deactivate",
+    "vacancyStatusVal": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive"
+    },
+    "generalInfo": "General information",
+    "additionalInfo": "Additional information",
+    "position": "Position:",
+    "department": "Department:",
+    "description": "Description:",
+    "salaryMin": "Minimum salary:",
+    "salaryMax": "Maximum salary:",
+    "location": "Locations:",
+    "salary": "{value}₴",
+    "timeline": "Timeline",
+    "hiringTeam": "Hiring Team",
+    "createdAt": "Created at:",
+    "deadlineDate": "Deadline date:",
+    "closedAt": "Closed at:",
+    "createdBy": "Created by:",
+    "assignedTo": "Responsible person:",
+    "addTask": "Add task",
+    "attention": "Attention!",
+    "deactivationDescription": "Do you really want to deactivate the vacancy?",
+    "yes": "Yes",
+    "no": "No",
+    "successTitle": "Success!",
+    "deaSuccessDescription": "The vacancy was deactivated successfully",
+    "failTitle": "Sorry!",
+    "failDescription": "Something went wrong. Try again later",
+    "showCandidate": "Show candidate",
+    "deleteItem": "Delete task",
+    "deleteTaskDescription": "Do you really want to delete the task?",
+    "deleteTaskSucces": "The task was deleted successfully",
+    "addtaskTitle": "Adding a new task",
+    "addtaskDescription": "Please find candidate which you want to select.",
+    "findCandidate": "Find candidate",
+    "cantFindCandidate": "If you can't find a candidate, you can add them.",
+    "addCandidate": "Add candidate",
+    "taskSuccessDescription": "The task was added successfully",
+    "stages": {
+      "SHORTLIST": "Shortlist",
+      "PREINTERVIEW": "Pre-interview",
+      "INTERVIEW": "Interview",
+      "TEST": "Test",
+      "APPLIED": "Applied",
+      "NOT_APPLIED": "Not applied"
+    }
+  },
+  "vacancy-adding": {
+    "title": "Adding a new vacancy",
+    "department": "Department",
+    "position": "Position",
+    "location": "Location",
+    "description": "Description",
+    "deadlineDate": "Deadline date",
+    "assignedTo": "Assign to",
+    "salaryMin": "Salary (minimum)",
+    "salaryMax": "Salary (maximum)",
+    "create": "Create",
+    "salaryError": "Minimum salary bigger than maximum",
+    "successTitle": "Success!",
+    "successDescription": "The vacancy was added successfully",
+    "failTitle": "Sorry!",
+    "failDescription": "Something went wrong. Try again later"
+  },
+  "header": {
+    "language": "Українська",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "vacancies": "Vacancies",
+    "candidates": "Candidates",
+    "employees": "Employees",
+    "structure": "Structure",
+    "logout": "Log out"
+  },
+  "ui-components": {
+    "failTitle": "Sorry!",
+    "failDescription": "Something went wrong",
+    "noResult": "No result was found",
+    "tryAgain": "Try again",
+    "loading": "Loading...",
+    "ok": "Ok"
+  },
+  "validation": {
+    "required": "The field is required",
+    "minLength": "The minimum field length is {value}",
+    "maxLength": "The maximum field length is {value}",
+    "email": "Wrong email format",
+    "password": "Password must contains minimum eight characters, at least one letter and one number",
+    "mobileNumber": "Wrong mobile number format",
+    "birthDate": "Incorrect date of birth (must be at least 18 years old)",
+    "date": "The date is incorrect",
+    "salary": "The salary is incorrect"
+  },
+  "navbar": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "vacancies": "Vacancies",
+    "candidates": "Candidates",
+    "employees": "Employees",
+    "collapseSidebar": "Collapse Sidebar",
+    "expandSidebar": "Expand Sidebar",
+    "menu": "Menu",
+    "recruitment": "Recruitment",
+    "organization": "Organization",
+    "language": "Українська",
+    "logout": "Log out",
+    "darkMode": "Dark mode",
+    "Dark mode": "Dark mode",
+    "Collapse Sidebar": "Collapse Sidebar",
+    "Light mode": "Light mode",
+    "lightMode": "Light mode"
+  },
+  "metadata": {
+    "login": {
+      "title": "Log in",
+      "description": "Log in Page"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Dashboard Page"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Profile page"
+    },
+    "candidates-list": {
+      "title": "Candidates list",
+      "description": "Candidates list page"
+    },
+    "candidate-adding": {
+      "title": "Add candidate",
+      "description": "Add candidate page"
+    },
+    "candidate-details": {
+      "title": "Candidate details",
+      "description": "Candidate details page"
+    },
+    "employees-list": {
+      "title": "Employees list",
+      "description": "Employees list page"
+    },
+    "employee-adding": {
+      "title": "Add employee",
+      "description": "Add employee page"
+    },
+    "employee-details": {
+      "title": "Employee details",
+      "description": "Employee details page"
+    },
+    "vacancies-list": {
+      "title": "Vacancies list",
+      "description": "Vacancies list page"
+    },
+    "vacancy-adding": {
+      "title": "Add vacancy",
+      "description": "Add vacancy page"
+    },
+    "vacancy-details": {
+      "title": "Vacancy details",
+      "description": "Vacancy details page"
+    }
+  }
+}
