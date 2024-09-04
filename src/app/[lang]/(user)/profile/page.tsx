@@ -1,8 +1,6 @@
-import SuspensePreloader from '@/ui-components/SuspensePreloader/SuspensePreloader'
 import { getTranslations } from 'next-intl/server'
 import dynamic from 'next/dynamic'
-
-// import Profile from './profile'
+import { SuspensePreloader } from '@/ui-components'
 
 const Profile = dynamic(() => import('./profile'), {
   loading: () => <SuspensePreloader />,

@@ -1,7 +1,7 @@
-import SuspensePreloader from '@/ui-components/SuspensePreloader/SuspensePreloader'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Suspense } from 'react'
+import { SuspensePreloader } from '@/ui-components'
 
 export default async function RootLayout({
   params: { locale },

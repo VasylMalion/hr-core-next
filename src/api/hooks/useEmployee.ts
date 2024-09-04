@@ -54,7 +54,7 @@ const useAddEmployee = () =>
   })
 
 const findEmployees = async (params: FindEmployeesParams) => {
-  const response = await instanceApi.post<FindEmployeesResponse>(
+  const response = await instanceApi.get<FindEmployeesResponse>(
     '/employees/search',
     { params }
   )

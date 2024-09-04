@@ -3,7 +3,8 @@ import { useState } from 'react'
 
 import { cn } from '@/common/utils'
 import { UserInfo } from '@/common/types'
-import Navbar from '@/ui-components/Navbar/Navbar'
+import { Navbar } from '@/ui-components'
+
 import Header from './header'
 
 type TLayoutProps = {

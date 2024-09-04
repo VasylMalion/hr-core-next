@@ -7,7 +7,6 @@ import PlusIcon from '@/assets/svgs/PlusIcon'
 import { useGetEmployees } from '@/api'
 import { useDebounce } from '@/hooks'
 import { generateRouteAsPath, useRouter } from '@/common/utils'
-import EmptyList from '@/ui-components/EmptyList/EmptyList'
 import { RoleTypes, RoutePaths } from '@/common/types'
 import { useUser } from '@/hooks'
 import {
@@ -22,8 +21,8 @@ import {
   TableHeadCell,
   Pagination,
   Input,
+  EmptyList,
 } from '@/ui-components'
-
 
 const Employees = () => {
   const t = useTranslations('employees-list')

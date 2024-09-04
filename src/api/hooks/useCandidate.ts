@@ -56,7 +56,7 @@ const useAddCandidate = () =>
   })
 
 const findCandidates = async (params: FindCandidatesParams) => {
-  const response = await instanceApi.post<FindCandidatesResponse>(
+  const response = await instanceApi.get<FindCandidatesResponse>(
     '/candidates/search',
     { params }
   )

@@ -1,6 +1,6 @@
-import SuspensePreloader from '@/ui-components/SuspensePreloader/SuspensePreloader'
 import { getTranslations } from 'next-intl/server'
 import dynamic from 'next/dynamic'
+import { SuspensePreloader } from '@/ui-components'
 
 const LoginForm = dynamic(() => import('./login-form'), {
   loading: () => <SuspensePreloader fullView />,

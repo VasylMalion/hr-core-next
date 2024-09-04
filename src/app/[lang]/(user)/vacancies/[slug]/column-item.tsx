@@ -1,14 +1,15 @@
 import { FunctionComponent, DragEvent, useState } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 import AvatarIcon from '@/assets/images/avatar.png'
 import AvatarWhiteIcon from '@/assets/images/avatar-white.png'
-import { Task, Column, RoutePaths } from '@/common/types'
+import { Task, Column, RoutePaths, Theme } from '@/common/types'
 import { Button, Modal } from '@/ui-components'
-import { generateRouteAsPath } from '@/common/utils'
+import { generateRouteAsPath, useRouter } from '@/common/utils'
 import { useDeleteTask } from '@/api'
+import { useTheme } from 'next-themes'
 
 type ColumnItemProps = {
   dragStartHandler: (e: DragEvent, column: Column, item: Task) => void
@@ -40,12 +41,11 @@ const TaskItem: FunctionComponent<TaskProps> = ({
   const router = useRouter()
 
   const [isOpenModal, setIsOpenModal] = useState<boolean>()
-  const {
-    mutate: deleteMutate,
-    reset,
-    ...deletingStatus
-  } = useDeleteTask()
-  const isDarkTheme = false
+  const { mutate: deleteMutate, reset, ...deletingStatus } = useDeleteTask()
+
+  const { resolvedTheme } = useTheme()
+
+  const isDarkTheme = resolvedTheme === Theme.DARK
 
   const onClick = () => {
     let it: Task | null = null
@@ -58,7 +58,8 @@ const TaskItem: FunctionComponent<TaskProps> = ({
     const column = desk.find((column) => column.title === it?.column) as Column
     const columnIndex = desk.findIndex((column) => column.title === it?.column)
     const task = column?.items.find((task) => task.id === item.id)
-    const taskIndex = column?.items.findIndex((task) => task.id === item.id) || 0
+    const taskIndex =
+      column?.items.findIndex((task) => task.id === item.id) || 0
 
     if (task) {
       setDesk([
@@ -103,12 +104,12 @@ const TaskItem: FunctionComponent<TaskProps> = ({
             alt=""
           />
           <div>
-            {/* <div className="text-base text-gray-600 dark:text-white">
-              {item.candidate.name + ' ' + item.candidate.surname}
+            <div className="text-base text-gray-600 dark:text-white">
+              {item.candidate?.name + ' ' + item.candidate?.surname}
             </div>
             <div className="text-xs text-gray-500">
-              {item.candidate.position}
-            </div> */}
+              {item.candidate?.position}
+            </div>
           </div>
         </div>
         {item.isOpen && (
@@ -177,6 +178,8 @@ const ColumnItem: FunctionComponent<ColumnItemProps> = ({
   desk,
 }) => {
   const t = useTranslations('vacancy-details')
+
+  console.log(column)
 
   return (
     <div

@@ -7,7 +7,6 @@ import PlusIcon from '@/assets/svgs/PlusIcon'
 import { RoutePaths } from '@/common/types'
 import { useGetCandidates } from '@/api'
 import { useDebounce } from '@/hooks'
-import EmptyList from '@/ui-components/EmptyList/EmptyList'
 import {
   Button,
   WithPreload,
@@ -21,6 +20,7 @@ import {
   Pagination,
   Input,
   Checkbox,
+  EmptyList,
 } from '@/ui-components'
 
 const CandidatesList = () => {

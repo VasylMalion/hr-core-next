@@ -2,13 +2,11 @@
 import { FunctionComponent, useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-import Typography from '@/ui-components/Typography/Typography'
-import Input from '@/ui-components/Input/Input'
+import { Typography, Input, Button } from '@/ui-components'
 import { InputState, RoutePaths } from '@/common/types'
 import { checkValidation } from '@/common/validation'
 import { setServerCookie, useRouter } from '@/common/utils'
 import { useLogin } from '@/api'
-import { Button } from '@/ui-components'
 
 const inputState = { value: '', validation: { isValid: true } }
 

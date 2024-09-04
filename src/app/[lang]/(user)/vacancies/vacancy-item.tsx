@@ -1,17 +1,13 @@
 import { FunctionComponent } from 'react'
+import { useTheme } from 'next-themes'
+import Image from 'next/image'
 
-import {
-  VacancyStatus,
-  Vacancy,
-  Theme,
-  RoutePaths,
-} from '@/common/types'
+import { VacancyStatus, Vacancy, Theme, RoutePaths } from '@/common/types'
 import { formatDate, useRouter } from '@/common/utils'
 import AvatarIcon from '@/assets/images/avatar.png'
 import AvatarWhiteIcon from '@/assets/images/avatar-white.png'
 import { useTranslations } from 'next-intl'
 import { generateRouteAsPath } from '@/common/utils'
-import Image from 'next/image'
 
 type VacancyItemProps = Vacancy
 
@@ -27,7 +23,9 @@ const VacancyItem: FunctionComponent<VacancyItemProps> = ({
   const t = useTranslations('vacancies-list')
   const router = useRouter()
 
-  const isDarkTheme = false
+  const { resolvedTheme } = useTheme()
+
+  const isDarkTheme = resolvedTheme === Theme.DARK
 
   const handleClick = () =>
     router.push(generateRouteAsPath(RoutePaths.VACANCY_DETAILS, { id }))
@@ -66,11 +64,11 @@ const VacancyItem: FunctionComponent<VacancyItemProps> = ({
             </div>
           </div>
           <div className="flex items-center gap-1">
-            {/* <Image
+            <Image
               src={isDarkTheme ? AvatarWhiteIcon : AvatarIcon}
               className="w-8 h-8"
               alt=""
-            /> */}
+            />
             <span>{`${assignedTo.name} ${assignedTo.surname}`}</span>
           </div>
         </div>

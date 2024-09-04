@@ -6,17 +6,8 @@ import { useParams } from 'next/navigation'
 import { formatDate, useRouter } from '@/common/utils'
 import { useGetEmployee, useDeleteEmployee } from '@/api'
 import { useUser } from '@/hooks'
-import {
-  ContentSection,
-  RoleTypes,
-  RoutePaths,
-} from '@/common/types'
-import {
-  Button,
-  WithPreload,
-  Typography,
-  Modal,
-} from '@/ui-components'
+import { ContentSection, RoleTypes, RoutePaths } from '@/common/types'
+import { Button, WithPreload, Typography, Modal } from '@/ui-components'
 
 const EmployeeDetails = () => {
   const t = useTranslations('employee-details')
@@ -107,9 +98,7 @@ const EmployeeDetails = () => {
         isError={isError}
       >
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 md:mb-4 gap:4">
-          <Typography appearance="title">
-            {t('title', { id })}
-          </Typography>
+          <Typography appearance="title">{t('title', { id })}</Typography>
           {user?.role === RoleTypes.ADMIN && (
             <div>
               <Button

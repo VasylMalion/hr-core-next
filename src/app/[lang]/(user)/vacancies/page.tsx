@@ -1,6 +1,6 @@
-import SuspensePreloader from '@/ui-components/SuspensePreloader/SuspensePreloader'
 import { getTranslations } from 'next-intl/server'
 import dynamic from 'next/dynamic'
+import { SuspensePreloader } from '@/ui-components'
 
 const VacanciesList = dynamic(() => import('./vacancies-list'), {
   loading: () => <SuspensePreloader />,

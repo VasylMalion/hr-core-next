@@ -3,8 +3,9 @@ import type { Metadata } from 'next'
 
 import QueryProvider from '@/providers/query-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
+import { SuspensePreloader } from '@/ui-components'
+
 import './globals.css'
-import SuspensePreloader from '@/ui-components/SuspensePreloader/SuspensePreloader'
 
 export const metadata: Metadata = {
   title: 'HR Core',

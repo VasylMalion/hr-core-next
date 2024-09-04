@@ -14,25 +14,33 @@ const UpdatePassword = () => {
 
   const [passwordOld, setPasswordOld] = useState<InputState>(inputState)
   const [passwordNew, setPasswordNew] = useState<InputState>(inputState)
-  const [passwordNewAgain, setPasswordNewAgain] = useState<InputState>(inputState)
+  const [passwordNewAgain, setPasswordNewAgain] =
+    useState<InputState>(inputState)
 
-  const { isPending, mutate, isSuccess, reset, isError, error } = useUpdatePassword()
+  const { isPending, mutate, isSuccess, reset, isError, error } =
+    useUpdatePassword()
 
   const shouldShowError =
-    (passwordNew.value && passwordNew.validation.isValid) &&
-    (passwordNewAgain.value && passwordNewAgain.validation.isValid) &&
+    passwordNew.value &&
+    passwordNew.validation.isValid &&
+    passwordNewAgain.value &&
+    passwordNewAgain.validation.isValid &&
     passwordNew.value !== passwordNewAgain.value
 
   const isValid =
-    (passwordOld.value && passwordOld.validation.isValid) &&
-    (passwordNew.value && passwordNew.validation.isValid) &&
-    (passwordNewAgain.value && passwordNewAgain.validation.isValid) &&
+    passwordOld.value &&
+    passwordOld.validation.isValid &&
+    passwordNew.value &&
+    passwordNew.validation.isValid &&
+    passwordNewAgain.value &&
+    passwordNewAgain.validation.isValid &&
     passwordNew.value === passwordNewAgain.value
 
-  const handleSubmit = () => mutate({
-    passwordOld: passwordOld.value,
-    passwordNew: passwordNew.value,
-  })
+  const handleSubmit = () =>
+    mutate({
+      passwordOld: passwordOld.value,
+      passwordNew: passwordNew.value,
+    })
 
   const handlePasswordOld = (value: string) => {
     const validation = checkValidation(value, {
@@ -70,25 +78,25 @@ const UpdatePassword = () => {
 
   return (
     <>
-      <div className='grid gap-8 max-w-[25rem]'>
+      <div className="grid gap-8 max-w-[25rem]">
         <div>
           <Input
-            type='password'
+            type="password"
             placeholder={t('passwordOld')}
             label={t('passwordOld')}
-            className='w-full'
+            className="w-full"
             value={passwordOld.value}
             onChange={handlePasswordOld}
             validation={passwordOld.validation}
           />
         </div>
-        <div className='grid gap-4'>
+        <div className="grid gap-4">
           <div>
             <Input
-              type='password'
+              type="password"
               placeholder={t('passwordNew')}
               label={t('passwordNew')}
-              className='w-full'
+              className="w-full"
               value={passwordNew.value}
               onChange={handlePasswordNew}
               validation={passwordNew.validation}
@@ -96,10 +104,10 @@ const UpdatePassword = () => {
           </div>
           <div>
             <Input
-              type='password'
+              type="password"
               placeholder={t('passwordNewAgain')}
               label={t('passwordNewAgain')}
-              className='w-full'
+              className="w-full"
               value={passwordNewAgain.value}
               onChange={handlePasswordNewAgain}
               validation={passwordNewAgain.validation}
@@ -108,16 +116,14 @@ const UpdatePassword = () => {
         </div>
       </div>
       {shouldShowError && (
-        <div className='text-red mt-4'>
-          {t('differentPasswords')}
-        </div>
+        <div className="text-red mt-4">{t('differentPasswords')}</div>
       )}
       <Button
-        textAlign='center'
+        textAlign="center"
         disabled={!isValid}
         isLoading={isPending}
         onClick={handleSubmit}
-        className='mt-8'
+        className="mt-8"
       >
         {t('update')}
       </Button>

@@ -240,7 +240,7 @@
     "showCandidate": "Show candidate",
     "deleteItem": "Delete task",
     "deleteTaskDescription": "Do you really want to delete the task?",
-    "deleteTaskSucces": "The task was deleted successfully",
+    "deleteTaskSuccess": "The task was deleted successfully",
     "addtaskTitle": "Adding a new task",
     "addtaskDescription": "Please find candidate which you want to select.",
     "findCandidate": "Find candidate",

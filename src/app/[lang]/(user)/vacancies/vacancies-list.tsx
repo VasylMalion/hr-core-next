@@ -15,9 +15,9 @@ import {
   Input,
   Checkbox,
   TabNavigation,
+  EmptyList,
 } from '@/ui-components'
 import VacancyItem from './vacancy-item'
-import EmptyList from '@/ui-components/EmptyList/EmptyList'
 
 enum TabNavigationTypes {
   ALL = 'ALL',
@@ -53,7 +53,7 @@ const CandidatesList = () => {
     refetch()
   }, [tab, currentPage, onlyMine, debouncedInputValue, refetch])
 
-  const list = data?.vacancies.map((item: Vacancy, index: number) => (
+  const list = data?.vacancies?.map((item: Vacancy, index: number) => (
     <VacancyItem key={index} {...item} />
   ))
 
@@ -109,7 +109,7 @@ const CandidatesList = () => {
         isSuccess={isSuccess}
         isError={isError}
       >
-        {data?.vacancies.length ? (
+        {data?.vacancies?.length ? (
           <>
             <div className="flex flex-wrap gap-8 mt-8">{list}</div>
             <div className="my-8">

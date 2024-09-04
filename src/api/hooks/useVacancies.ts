@@ -68,8 +68,11 @@ const useDeactivateVacancy = () =>
     mutationFn: (params: DeactivateVacancyParams) => deactivateVacancy(params),
   })
 
-const addTask = async ({ id }: AddTaskParams) => {
-  const response = await instanceApi.post<AddTaskResponse>(`/jobs/${id}/task`)
+const addTask = async (params: AddTaskParams) => {
+  const response = await instanceApi.post<AddTaskResponse>(
+    `/jobs/${params.id}/task`,
+    params
+  )
   return response.data
 }
 
@@ -79,8 +82,12 @@ const useAddTask = () =>
     mutationFn: (params: AddTaskParams) => addTask(params),
   })
 
-const deleteTask = async ({ vacancyId }: DeleteTaskParams) => {
-  const response = await instanceApi.post(`/jobs/${vacancyId}/task`)
+const deleteTask = async ({ vacancyId, id }: DeleteTaskParams) => {
+  const response = await instanceApi.delete(`/jobs/${vacancyId}/task`, {
+    data: {
+      id,
+    },
+  })
   return response.data
 }
 
@@ -90,8 +97,11 @@ const useDeleteTask = () =>
     mutationFn: (params: DeleteTaskParams) => deleteTask(params),
   })
 
-const updateTask = async ({ id }: UpdateTaskParams) => {
-  const response = await instanceApi.post(`/jobs/${id}/updateTask`)
+const updateTask = async (params: UpdateTaskParams) => {
+  const response = await instanceApi.post(
+    `/jobs/${params.id}/updateTask`,
+    params
+  )
   return response.data
 }
 

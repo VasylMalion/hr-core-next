@@ -11,5 +11,4 @@ export const config = {
     '/',
     '/(ua|en)/:path*',
   ],
-  // matcher: ["/((?!api|_next|.\..).*)"],
 }

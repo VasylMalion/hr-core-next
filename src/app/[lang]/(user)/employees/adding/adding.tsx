@@ -9,12 +9,7 @@ import {
   Input,
   Modal,
 } from '@/ui-components'
-import {
-  GenderTypes,
-  InputState,
-  RoleTypes,
-  RoutePaths,
-} from '@/common/types'
+import { GenderTypes, InputState, RoleTypes, RoutePaths } from '@/common/types'
 import { checkValidation } from '@/common/validation'
 import { useTranslations } from 'next-intl'
 import { useAddEmployee } from '@/api'

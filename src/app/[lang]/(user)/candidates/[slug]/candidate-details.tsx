@@ -15,7 +15,7 @@ const CandidateDetails = () => {
 
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
-  const { data, isSuccess, isLoading, isError } = useGetCandidate({ id })
+  const { data, isSuccess, isFetching, isError } = useGetCandidate({ id })
   const {
     mutate: deleteMutate,
     reset,
@@ -97,7 +97,7 @@ const CandidateDetails = () => {
     <>
       <WithPreload
         isSuccess={isSuccess}
-        isLoading={isLoading}
+        isLoading={isFetching}
         isError={isError}
       >
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 md:mb-4">
@@ -105,7 +105,6 @@ const CandidateDetails = () => {
           <div>
             <Button
               type="secondary"
-              isLoading={false}
               onClick={() => setIsOpenModal(true)}
               className="border-red border !text-red"
             >

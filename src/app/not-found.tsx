@@ -1,14 +1,13 @@
-'use client';
-
-import Error from 'next/error';
-import React from 'react';
+'use client'
+import React from 'react'
+import Error from 'next/error'
 
 export default function NotFound() {
   return (
     <html lang="en">
-    <body>
-      <Error statusCode={404} />
-    </body>
-  </html>
+      <body>
+        <Error statusCode={404} />
+      </body>
+    </html>
   )
 }

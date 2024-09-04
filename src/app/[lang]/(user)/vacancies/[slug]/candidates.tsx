@@ -42,7 +42,7 @@ const Candidates: FunctionComponent<CandidatesProps> = ({
   ).map((key, index) => {
     return {
       id: index,
-      title: t(key),
+      title: key,
       color: columnColors[index],
       items: desk?.tasks
         ?.filter((item) => item.column === Stage[key])
@@ -62,7 +62,7 @@ const Candidates: FunctionComponent<CandidatesProps> = ({
   useEffect(() => {
     if (vacancyStatus.isSuccess && !vacancyStatus.isLoading)
       setBoard(initialBoard)
-  }, [initialBoard, vacancyStatus])
+  }, [vacancyStatus.isSuccess, vacancyStatus.isLoading])
 
   const sortedItems = (column: Column) =>
     board?.map((boardItem) => {

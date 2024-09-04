@@ -66,7 +66,7 @@ const VacancyDetails = () => {
     id,
   })
 
-  const { mutate: addTask, ...addTaskData } = useAddTask()
+  const { mutate: addTask, reset, ...addTaskData } = useAddTask()
   const { mutate: deactivate, ...deactivationData } = useDeactivateVacancy()
 
   useEffect(() => {
@@ -86,7 +86,8 @@ const VacancyDetails = () => {
     setIsOpenTaskModal(false)
     setCandidate({ value: null, validation: { isValid: true } })
     setInputValue('')
-    // dispatch(util.resetApiState())
+    refetch()
+    reset()
   }
 
   const options = [
@@ -124,7 +125,7 @@ const VacancyDetails = () => {
       default: {
         return (
           <Candidates
-          {...(data as Vacancy)}
+            {...(data as Vacancy)}
             refetch={refetch}
             vacancyStatus={vacancyStatus}
           />
@@ -139,10 +140,6 @@ const VacancyDetails = () => {
     })
 
     setCandidate((prev) => ({ ...prev, validation }))
-  }
-
-  function navigate(CANDIDATE_ADDING: string): void {
-    throw new Error('Function not implemented.')
   }
 
   return (
@@ -242,7 +239,7 @@ const VacancyDetails = () => {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-3">
               <div>{t('addtaskDescription')}</div>
-              {/* <SelectInput
+              <SelectInput
                 label={t('findCandidate')}
                 placeholder={t('findCandidate')}
                 value={inputValue}
@@ -254,12 +251,12 @@ const VacancyDetails = () => {
                 data={candidates.data}
                 validation={candidate.validation}
                 onSuccessFind={(value) => setCandidate({ ...candidate, value })}
-              /> */}
+              />
             </div>
             <div className="grid gap-3">
               <div>{t('cantFindCandidate')}</div>
               <Button
-                onClick={() => navigate(RoutePaths.CANDIDATE_ADDING)}
+                onClick={() => router.push(RoutePaths.CANDIDATE_ADDING)}
                 textAlign="center"
               >
                 {t('addCandidate')}

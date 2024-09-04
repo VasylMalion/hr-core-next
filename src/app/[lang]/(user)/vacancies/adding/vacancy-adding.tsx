@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
 import {
@@ -64,6 +64,10 @@ const CandidateAdding = () => {
 
   const { isPending, isSuccess, isError, mutate, reset } = useAddVacancy()
   const findEmployees = useFindEmployees({ username: debouncedInputValue })
+
+  useEffect(() => {
+    findEmployees.refetch()
+  }, [debouncedInputValue])
 
   const handleSubmit = () =>
     mutate({
@@ -183,7 +187,7 @@ const CandidateAdding = () => {
     <>
       <Typography appearance="title">{t('title')}</Typography>
       <div className="grid gap-6 max-w-large">
-        <div className='grid grid-cols-row gap-4 md:gap-8'>
+        <div className="grid grid-cols-row gap-4 md:gap-8">
           <Input
             label={t('department')}
             placeholder={t('department')}
@@ -201,7 +205,7 @@ const CandidateAdding = () => {
             validation={position.validation}
           />
         </div>
-        <div className='grid grid-cols-row gap-4 md:gap-8'>
+        <div className="grid grid-cols-row gap-4 md:gap-8">
           <Input
             label={t('location')}
             placeholder={t('location')}
@@ -211,7 +215,7 @@ const CandidateAdding = () => {
             validation={location.validation}
           />
         </div>
-        <div className='grid grid-cols-row gap-4 md:gap-8'>
+        <div className="grid grid-cols-row gap-4 md:gap-8">
           <DatePicker
             label={t('deadlineDate')}
             placeholder={t('deadlineDate')}
@@ -220,7 +224,7 @@ const CandidateAdding = () => {
             validation={deadlineDate.validation}
             setValue={handleDeadlineDate}
           />
-          {/* <SelectInput
+          <SelectInput
             label={t('assignedTo')}
             placeholder={t('assignedTo')}
             value={inputValue}
@@ -232,9 +236,9 @@ const CandidateAdding = () => {
             data={findEmployees.data}
             validation={assignedTo.validation}
             onSuccessFind={(value) => setAssignedTo({ ...assignedTo, value })}
-          /> */}
+          />
         </div>
-        <div className='grid grid-cols-row gap-4 md:gap-8'>
+        <div className="grid grid-cols-row gap-4 md:gap-8">
           <Input
             type="number"
             label={t('salaryMin')}
@@ -255,7 +259,7 @@ const CandidateAdding = () => {
           />
         </div>
         {shouldShowError && <div className="text-red">{t('salaryError')}</div>}
-        <div className='grid grid-cols-row gap-4 md:gap-8'>
+        <div className="grid grid-cols-row gap-4 md:gap-8">
           <TextArea
             label={t('description')}
             placeholder={t('description')}

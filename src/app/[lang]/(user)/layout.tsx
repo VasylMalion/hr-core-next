@@ -1,11 +1,11 @@
+import { Suspense } from 'react'
 import { RedirectType } from 'next/navigation'
 import { cookies } from 'next/headers'
 
 import { getUserInfo, handleServerRedirect } from '@/common/utils'
 import { LayoutContent } from './layout-content'
 import { UserProvider } from '@/providers/user-content'
-import { Suspense } from 'react'
-import SuspensePreloader from '@/ui-components/SuspensePreloader/SuspensePreloader'
+import { SuspensePreloader } from '@/ui-components'
 
 type TLayoutProps = {
   children: React.ReactNode
