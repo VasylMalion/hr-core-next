@@ -327,6 +327,7 @@ const EmployeeAdding: FunctionComponent = () => {
               <Select
                 label={t('role')}
                 className="w-full"
+                dataTestId='select-role'
                 options={roleOptions}
                 value={role.value}
                 onChange={handleRole}
