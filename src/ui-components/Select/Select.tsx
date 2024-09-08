@@ -6,7 +6,7 @@ import { getUniqueId } from '@/common/utils'
 
 type InputProps = {
   label?: string
-  placeholder?: string
+  dataTestId?: string
   value?: string
   onChange?: (value: string) => void
   className?: string
@@ -21,7 +21,7 @@ type OptionType = {
 
 const Select: FunctionComponent<InputProps> = ({
   label,
-  placeholder,
+  dataTestId,
   value,
   onChange,
   className,
@@ -38,6 +38,7 @@ const Select: FunctionComponent<InputProps> = ({
       <select
         value={value}
         id={id}
+        data-testId={dataTestId}
         name='select'
         onChange={(e) => onChange?.(e.target.value)}
         className={`

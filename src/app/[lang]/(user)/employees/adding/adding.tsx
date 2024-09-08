@@ -246,7 +246,7 @@ const EmployeeAdding: FunctionComponent = () => {
             <div className="grid grid-cols-row gap-4 md:gap-8">
               <Select
                 options={genderOptions}
-                placeholder={t('genderTitle')}
+                dataTestId='gender-select'
                 label={t('genderTitle')}
                 className="w-full"
                 value={gender.value}
