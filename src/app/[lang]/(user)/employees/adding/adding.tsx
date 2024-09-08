@@ -326,7 +326,6 @@ const EmployeeAdding: FunctionComponent = () => {
             <div className="grid grid-cols-row gap-4 md:gap-8">
               <Select
                 label={t('role')}
-                placeholder={t('role')}
                 className="w-full"
                 options={roleOptions}
                 value={role.value}

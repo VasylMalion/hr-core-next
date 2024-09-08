@@ -211,7 +211,6 @@ const CandidateAdding = () => {
               <Select
                 options={genderOptions}
                 label={t('genderTitle')}
-                placeholder={t('genderTitle')}
                 className="w-full"
                 value={gender.value}
                 onChange={handleGender}
