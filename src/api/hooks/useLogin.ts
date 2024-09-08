@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query'
-import { LoginFailResponse, LoginParams, LoginResponse } from '../types'
+import { FailResponse, LoginParams, LoginResponse } from '../types'
 import { authApi } from '../axios'
 import { AxiosError } from 'axios'
 
@@ -9,7 +9,7 @@ const login = async (params: LoginParams) => {
 }
 
 const useLogin = () =>
-  useMutation<LoginResponse, AxiosError<LoginFailResponse>, LoginParams>({
+  useMutation<LoginResponse, AxiosError<FailResponse>, LoginParams>({
     mutationKey: ['login'],
     mutationFn: (params: LoginParams) => login(params),
   })

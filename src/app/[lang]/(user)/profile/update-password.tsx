@@ -137,7 +137,7 @@ const UpdatePassword = () => {
         isOpen={isError}
         onClose={onClose}
         title={t('failTitle')}
-        body={t(`errors.${error?.message}`)}
+        body={t(`errors.${error?.response?.data}`)}
       />
     </>
   )

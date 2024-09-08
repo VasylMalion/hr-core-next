@@ -16,7 +16,7 @@ export type LoginResponse = {
   userInfo: UserInfo
 }
 
-export type LoginFailResponse = {
+export type FailResponse = {
   response: {
     data: string
   }
